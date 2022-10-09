@@ -18,25 +18,10 @@ class ManageCompliments extends Conversation
         parent::__construct($bot);
     }
 
-    protected function getTextWithoutCommand(Message $message): ?string
-    {
-        $text = $message->text;
-        $offset = 0;
-
-        foreach ($message->entities as $entity) {
-            if ($entity->type === 'bot_command') {
-                $text = substr_replace($text, '', $offset + $entity->offset, $entity->length);
-                $offset += $entity->length;
-            }
-        }
-
-        return trim($text) ?: null;
-    }
-
     #[Command('add')]
     public function add(Update $update)
     {
-        $text = $this->getTextWithoutCommand($update->message);
+        $text = $update->message->text();
         $author = $update->user()->id;
 
         if ($text === null) {

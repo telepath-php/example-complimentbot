@@ -2864,16 +2864,16 @@
         },
         {
             "name": "telepath/telepath",
-            "version": "v0.5.6",
+            "version": "v0.5.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/telepath-php/telepath.git",
-                "reference": "c6ce85cbf7f21abba4d9f72f149c8d7bc067998e"
+                "reference": "d17d8865e614b3634acc9f20e8ad64805c8e58a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/telepath-php/telepath/zipball/c6ce85cbf7f21abba4d9f72f149c8d7bc067998e",
-                "reference": "c6ce85cbf7f21abba4d9f72f149c8d7bc067998e",
+                "url": "https://api.github.com/repos/telepath-php/telepath/zipball/d17d8865e614b3634acc9f20e8ad64805c8e58a1",
+                "reference": "d17d8865e614b3634acc9f20e8ad64805c8e58a1",
                 "shasum": ""
             },
             "require": {
@@ -2910,9 +2910,9 @@
             "description": "PHP Library for creating Telegram Bots",
             "support": {
                 "issues": "https://github.com/telepath-php/telepath/issues",
-                "source": "https://github.com/telepath-php/telepath/tree/v0.5.6"
+                "source": "https://github.com/telepath-php/telepath/tree/v0.5.7"
             },
-            "time": "2022-10-09T08:55:48+00:00"
+            "time": "2022-10-09T17:12:21+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -3723,5 +3723,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.2.0"
+    "plugin-api-version": "2.3.0"
 }
