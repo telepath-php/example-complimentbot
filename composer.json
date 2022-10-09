@@ -14,13 +14,17 @@
             "email": "mail@tii.one"
         }
     ],
-    "minimum-stability": "dev",
     "require": {
-        "telepath/telepath": "dev-telepathy-dotenv",
-        "illuminate/database": "10.x-dev",
-        "symfony/cache": "6.2.x-dev"
+        "telepath/telepath": "^0.5",
+        "illuminate/database": "^9.34",
+        "symfony/cache": "^6.1"
     },
     "require-dev": {
-        "spatie/ray": "dev-main"
+        "spatie/ray": "^1.36"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ]
     }
 }
