@@ -36,8 +36,6 @@ class ManageCompliments extends Conversation
     #[Command('add')]
     public function add(Update $update)
     {
-        ray($update);
-
         $text = $this->getTextWithoutCommand($update->message);
         $author = $update->user()->id;
 
