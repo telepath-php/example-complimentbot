@@ -18,7 +18,7 @@ class Start
     {
         $this->bot->sendMessage(
             chat_id: $update->chat()->id,
-            text: 'Hallo!'
+            text: 'Hello!'
         );
     }
 
