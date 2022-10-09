@@ -1,0 +1,26 @@
+{
+    "name": "telepath/complimentbot",
+    "description": "Example inline bot that suggests compliments.",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Telepath\\ComplimentBot\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Tii",
+            "email": "mail@tii.one"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "telepath/telepath": "dev-telepathy-dotenv",
+        "illuminate/database": "10.x-dev",
+        "symfony/cache": "6.2.x-dev"
+    },
+    "require-dev": {
+        "spatie/ray": "dev-main"
+    }
+}
