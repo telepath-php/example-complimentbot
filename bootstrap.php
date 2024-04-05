@@ -2,6 +2,9 @@
 
 use Dotenv\Dotenv;
 use Illuminate\Database\Capsule\Manager as Capsule;
+use Symfony\Component\Cache\Adapter\FilesystemAdapter;
+use Telepath\Bot;
+use Telepath\Facades\BotBuilder;
 
 require __DIR__ . '/vendor/autoload.php';
 
@@ -22,3 +25,14 @@ $capsule->addConnection([
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
+
+function bot(): Bot
+{
+    return BotBuilder::token($_ENV['TELEGRAM_API_TOKEN'])
+        ->handlerPath(__DIR__ . '/src/Telepath')
+        ->apiServerUrl($_ENV['TELEGRAM_API_URL'] ?: null)
+        ->httpProxy($_ENV['TELEPATH_PROXY'] ?: null)
+        ->useCache(new FilesystemAdapter(
+            directory: __DIR__ . '/storage/cache/'
+        ))->build();
+}

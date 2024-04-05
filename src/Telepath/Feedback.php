@@ -1,6 +1,6 @@
 <?php
 
-namespace Telepath\ComplimentBot\Telegram;
+namespace Telepath\ComplimentBot\Telepath;
 
 use Telepath\ComplimentBot\Models\Compliment;
 use Telepath\Handlers\ChosenInlineResult;

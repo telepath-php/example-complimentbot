@@ -1,25 +1,21 @@
 <?php
 
-namespace Telepath\ComplimentBot\Telegram;
+namespace Telepath\ComplimentBot\Telepath;
 
+use Telepath\Bot;
 use Telepath\ComplimentBot\Models\Compliment;
 use Telepath\Handlers\InlineQuery;
 use Telepath\Telegram\InlineQueryResultArticle;
 use Telepath\Telegram\InputTextMessageContent;
 use Telepath\Telegram\Update;
-use Telepath\TelegramBot;
 
 class QueryCompliment
 {
 
-    public function __construct(
-        protected TelegramBot $bot
-    ) {}
-
     const RESULTS_PER_PAGE = 50;
 
     #[InlineQuery]
-    public function query(Update $update)
+    public function query(Bot $bot, Update $update)
     {
         $search = $update->inline_query->query;
         $offset = (int) $update->inline_query->offset;
@@ -41,11 +37,11 @@ class QueryCompliment
             );
         }
 
-        $this->bot->answerInlineQuery(
+        $bot->answerInlineQuery(
             inline_query_id: $update->inline_query->id,
+            results: $results,
             cache_time: 0,
             next_offset: $offset + self::RESULTS_PER_PAGE,
-            results: $results,
         );
     }
 
